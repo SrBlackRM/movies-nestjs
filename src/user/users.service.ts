@@ -36,16 +36,6 @@ export class UserService{
         return noPassUser
     }
 
-    async loginValidate(userData: UsersValidation): Promise<UserModel>{
-        const user = await this.usersRepository.findOne({where: {username: userData.username}});
-
-        if(!user || !(md5(userData.password) == user.password)){
-            new UnauthorizedException('Credenciais inválidas')
-        } 
-        
-        return user;
-    }
-
     async findUserByUsername(username: string): Promise<UserModel>{
         return this.usersRepository.findOne({where: { username }});
     }
