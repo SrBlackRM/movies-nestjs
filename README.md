@@ -25,10 +25,11 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
     * Redis
 
   2. Execução desse repositório:
-    * Clonar para uma pasta local
-    * instalar as dependências usando npm install ou yarn install.
-    * criar um arquivo .env
-    * preencher com as seguintes variáveis de ambiente, exemplo:
+  
+  * Clonar para uma pasta local
+  * instalar as dependências usando npm install ou yarn install.
+  * criar um arquivo .env
+  * preencher com as seguintes variáveis de ambiente, exemplo:
 
       POSTGRES_HOST=localhost
       POSTGRES_DB_PORT=5432
@@ -41,7 +42,7 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
 
       JWT_SECRET=sua_chave_secreta
 
-    * Iniciar o projeto com o Docker com o seguinte comando:
+  * Iniciar o projeto com o Docker com o seguinte comando:
 
       docker-compose --env-file .env  up -d
       
