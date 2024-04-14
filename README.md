@@ -49,4 +49,6 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
     ```bash
     docker-compose --env-file .env  up -d
     ```
+
+    OBS - no caso de rodar o projeto direto com o docker, utilizar "db" como POSTGRES_HOST no arquivo .env
       
