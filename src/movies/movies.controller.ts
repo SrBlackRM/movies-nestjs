@@ -1,0 +1,37 @@
+import { Controller, Get, Post, Put, Delete, Param, ParseIntPipe, Body } from "@nestjs/common";
+import { MovieModel } from "./movies.model";
+import { MovieService } from "./movies.service";
+import { MovieValidation } from "./validation/movies.validation";
+
+@Controller('/movies')
+export class MoviesController{
+    constructor(private readonly movieService: MovieService) {}
+
+    @Get()
+    public async getAll(): Promise<MovieModel[]>{
+        return this.movieService.getAllMovies();
+    }
+
+    @Get(':id')
+    public async getSpecificMovies(@Param('id', ParseIntPipe) id: number): Promise<MovieModel>{
+        return this.movieService.getOneMovie(id);
+    }
+
+    @Post('add')
+    public createNewMovie(@Body() movieDataBody: MovieValidation): object{
+        return this.movieService.movieAdd(movieDataBody);
+    }
+    
+
+    @Put(':id/update')
+    updateMovie(@Param('id', ParseIntPipe) id: number, @Body() movieDataBody: MovieModel) {
+        return this.movieService.movieUpdate(id, movieDataBody);
+    }
+
+
+    @Delete(':id/delete')
+    deleteMovie(@Param('id', ParseIntPipe) id: number) {
+        return this.movieService.movieDelete(id);
+    }
+
+}
