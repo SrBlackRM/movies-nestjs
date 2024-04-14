@@ -43,6 +43,8 @@ export class MovieService {
 
     // ADICIONA O FILME NO BANCO, CASO ESTEJA TUDO CERTO (VALIDADO)
     async movieAdd(movieDataBody: MovieValidation): Promise<MovieModel>{
+        // Limpa o cache após a atualização, para que não continue exibindo os dados anteriores
+        await redis.del("all:movies");
         return await this.moviesRepository.save(movieDataBody);
     }
 
@@ -79,6 +81,8 @@ export class MovieService {
         }
 
         await this.moviesRepository.delete(id);
+        // Limpa o cache após a atualização, para que não continue exibindo os dados anteriores
+        await redis.del("all:movies");
 
         return `O filme com o id ${id} foi deletado com sucesso!`;
     }
