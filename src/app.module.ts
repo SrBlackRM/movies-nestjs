@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MovieModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UserModule } from './user/users.module';
+import { AuthModule } from './auth/auth.module';
 require('dotenv').config();
 
 @Module({
@@ -13,7 +14,7 @@ require('dotenv').config();
     password: String(process.env.POSTGRES_PASSWORD),
     entities: ["dist/**/*.model.js"],
     synchronize: true,
-  }), MovieModule, UserModule],
+  }), MovieModule, UserModule, AuthModule],
   controllers: [],
   providers: [],
 })
