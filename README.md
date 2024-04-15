@@ -62,6 +62,72 @@ Porta padrão do projeto é 8080, mas pode ser alterado
 * Usuários: criação de usuário em `POST /api/v1/users`
 * Autenticação: autenticação de login em `POST /api/v1/auth/login`, validado o login é gerado um JWT que garante usuário autenticado para o resto da aplicação
 
+#### Exemplos usando as rotas
+
+##### Filmes
+
+** Listando o catálogo de filmes **
+
+`GET localhost:8080/api/v1/movies/`
+
+** Listando filme pelo id **
+
+`GET localhost:8080/api/v1/movies/1`
+
+** Criando filme no banco * Autenticado * **
+
+`POST localhost:8080/api/v1/movies/add`
+```JSON
+  {
+    "title": "Homem Aranha 1",
+    "release": "07/02/2004",
+    "releaseAge": 2004,
+    "genre": "Action",
+    "country": "United States",
+    "runtime": "02:04",
+    "score": 98,
+    "overview": "Peter Parker was bited by an radioactive spider and became SpiderMan"
+  }
+```
+
+** Atualiza um filme no banco * Autenticado * **
+
+`PUT localhost:8080/api/v1/movies/1/update`
+```JSON
+  {
+    "title": "Homem Aranha 1",
+    "release": "07/02/2004"
+  }
+```
+
+** Deleta um filme no banco * Autenticado * **
+
+`DELETE localhost:8080/api/v1/movies/1/delete`
+
+##### Usuários / Autenticação
+
+** Cria um novo usuário (não autenticado para poder criar o primeiro) **
+
+`POST localhost:8080/api/v1/users`
+```JSON
+  {
+    "name": "Michel",
+    "username": "SrBlackRM",
+    "email": "teste@gmail.com",
+    "password": "Test123!"
+  }
+```
+
+** Faz o login (não autenticado, gera autenticação) **
+
+`POST localhost:8080/api/v1/auth/login`
+```JSON
+  {
+    "email": "teste@gmail.com",
+    "password": "Test123!"
+  }
+```
+
 
 ### Documentação
 
