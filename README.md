@@ -18,11 +18,11 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
 
   1. Requisitos:
 
-    NodeJS
-    Nest.js
-    Docker
-    PostgreSQL
-    Redis
+    - NodeJS
+    - Nest.js
+    - Docker
+    - PostgreSQL
+    - Redis
 
   2. Execução desse repositório:
   
@@ -43,6 +43,10 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
 
     JWT_SECRET=chave_secreta
     ```
+    
+    OBS - no caso de rodar o projeto direto com o docker, utilizar "db" como POSTGRES_HOST e "cache" como REDIS_HOST no arquivo .env, pois é como estão referenciados no arquivo .env
+
+    Para o caso de querer rodar a aplicação local, deixar como localhost
 
   - Iniciar o projeto com o Docker com o seguinte comando:
 
@@ -50,7 +54,10 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
     docker-compose --env-file .env  up -d
     ```
 
-    OBS - no caso de rodar o projeto direto com o docker, utilizar "db" como POSTGRES_HOST e "cache" como REDIS_HOST no arquivo .env, pois é como estão referenciados no arquivo .env
+### Rotas
 
+Porta padrão do projeto é 8080, mas pode ser alterado
 
-      
+* Filmes: catálogo em `GET /api/v1/movies` (deixei como publico, mesmo sem autenticação possível visualizar, porém, alterar apenas, criar ou remover somente autenticado), CRUD completo a partir desse endpoint (autenticado) ```POST /api/v1/movies/add```
+* Usuários: criação de usuário em `POST /api/v1/users`
+* Autenticação: autenticação de login em `POST /api/v1/auth/login`, validado o login é gerado um JWT que garante usuário autenticado para o resto da aplicação
