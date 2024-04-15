@@ -15,7 +15,7 @@ import { LoginValidationMiddleware } from './middlewares/login-validation.middle
     signOptions: { expiresIn: '1d' },
   })],
   providers: [AuthService, LocalStrategy, JwtStrategy],
-  controllers: [AuthController]
+  controllers: [AuthController],
 })
 export class AuthModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {
