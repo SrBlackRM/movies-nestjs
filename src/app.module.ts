@@ -5,7 +5,6 @@ import { UserModule } from './user/users.module';
 import { AuthModule } from './auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
-import { UnauthorizedExceptionFilter } from './auth/class/UnauthorizedExeceptionFilter';
 require('dotenv').config();
 
 @Module({
@@ -22,9 +21,6 @@ require('dotenv').config();
   providers: [{
     provide: APP_GUARD,
     useClass: JwtAuthGuard,
-  },{
-    provide: APP_FILTER,
-    useClass: UnauthorizedExceptionFilter,
   }],
 })
 export class AppModule {}
