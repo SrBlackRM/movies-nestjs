@@ -61,3 +61,11 @@ Porta padrão do projeto é 8080, mas pode ser alterado
 * Filmes: catálogo em `GET /api/v1/movies` (deixei como publico, para que mesmo sem autenticação seja possível visualizar), CRUD completo a partir desse endpoint (autenticado) exemplo criar um novo filme no catálogo ```POST /api/v1/movies/add```
 * Usuários: criação de usuário em `POST /api/v1/users`
 * Autenticação: autenticação de login em `POST /api/v1/auth/login`, validado o login é gerado um JWT que garante usuário autenticado para o resto da aplicação
+
+
+### Documentação
+
+O projeto conta com uma documentação interativa usando Swagger que você pode acessar facilmente através da rota `/docs`. Lá, é possível ter uma visão completa de todos os endpoints disponíveis, permitindo explorar suas funcionalidades e até mesmo experimentá-los diretamente.
+
+### Deploy
+
