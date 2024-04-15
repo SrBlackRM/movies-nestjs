@@ -11,10 +11,11 @@ require('dotenv').config();
   // passamos nosso objeto de configuração no forRoot
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
-    host: process.env.POSTGRES_HOST,
+    host: String(process.env.POSTGRES_HOST),
     port: Number(process.env.POSTGRES_PORT),
     username: String(process.env.POSTGRES_USER),
     password: String(process.env.POSTGRES_PASSWORD),
+    database: String(process.env.POSTGRES_DB_NAME),
     entities: ["dist/**/*.model.js"],
     synchronize: true,
   }), MovieModule, UserModule, AuthModule],

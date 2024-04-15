@@ -53,6 +53,14 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
     ```bash
     docker-compose --env-file .env  up -d
     ```
+  
+  - Acessar o container do docker, usando o comando `docker ps` encontrar o ID do container do postgres e executar:
+
+    ```bash
+    docker exec -it nome_do_container psql -U postgres -c 'CREATE DATABASE nome_do_banco;'
+    ```
+
+  - Após criar a database, reiniciar o container da aplicação no docker, ou parar e usar localmente com `npm run start`  
 
 ### Rotas
 
