@@ -66,15 +66,15 @@ Porta padrão do projeto é 8080, mas pode ser alterado
 
 ##### Filmes
 
-** Listando o catálogo de filmes **
+**Listando o catálogo de filmes**
 
 `GET localhost:8080/api/v1/movies/`
 
-** Listando filme pelo id **
+**Listando filme pelo id**
 
 `GET localhost:8080/api/v1/movies/1`
 
-** Criando filme no banco * Autenticado * **
+**Criando filme no banco *Autenticado***
 
 `POST localhost:8080/api/v1/movies/add`
 ```JSON
@@ -90,7 +90,7 @@ Porta padrão do projeto é 8080, mas pode ser alterado
   }
 ```
 
-** Atualiza um filme no banco * Autenticado * **
+**Atualiza um filme no banco *Autenticado***
 
 `PUT localhost:8080/api/v1/movies/1/update`
 ```JSON
@@ -100,13 +100,13 @@ Porta padrão do projeto é 8080, mas pode ser alterado
   }
 ```
 
-** Deleta um filme no banco * Autenticado * **
+**Deleta um filme no banco *Autenticado***
 
 `DELETE localhost:8080/api/v1/movies/1/delete`
 
 ##### Usuários / Autenticação
 
-** Cria um novo usuário (não autenticado para poder criar o primeiro) **
+**Cria um novo usuário (não autenticado para poder criar o primeiro)**
 
 `POST localhost:8080/api/v1/users`
 ```JSON
@@ -118,7 +118,7 @@ Porta padrão do projeto é 8080, mas pode ser alterado
   }
 ```
 
-** Faz o login (não autenticado, gera autenticação) **
+**Faz o login (não autenticado, gera autenticação)**
 
 `POST localhost:8080/api/v1/auth/login`
 ```JSON
