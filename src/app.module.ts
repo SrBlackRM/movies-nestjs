@@ -3,11 +3,12 @@ import { MovieModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UserModule } from './user/users.module';
 import { AuthModule } from './auth/auth.module';
-import { APP_FILTER, APP_GUARD } from '@nestjs/core';
+import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 require('dotenv').config();
 
 @Module({
+  // passamos nosso objeto de configuração no forRoot
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
     host: process.env.POSTGRES_HOST,

@@ -58,6 +58,6 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
 
 Porta padrão do projeto é 8080, mas pode ser alterado
 
-* Filmes: catálogo em `GET /api/v1/movies` (deixei como publico, mesmo sem autenticação possível visualizar, porém, alterar apenas, criar ou remover somente autenticado), CRUD completo a partir desse endpoint (autenticado) ```POST /api/v1/movies/add```
+* Filmes: catálogo em `GET /api/v1/movies` (deixei como publico, para que mesmo sem autenticação seja possível visualizar), CRUD completo a partir desse endpoint (autenticado) exemplo criar um novo filme no catálogo ```POST /api/v1/movies/add```
 * Usuários: criação de usuário em `POST /api/v1/users`
 * Autenticação: autenticação de login em `POST /api/v1/auth/login`, validado o login é gerado um JWT que garante usuário autenticado para o resto da aplicação

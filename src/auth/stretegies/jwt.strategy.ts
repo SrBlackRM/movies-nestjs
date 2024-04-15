@@ -23,3 +23,5 @@ export class JwtStrategy extends PassportStrategy(Strategy){
         }
     }
 }
+
+// Essa estratégia vai receber o JWT, decodificar de acordo com nosso JWT_SECRETE e validar

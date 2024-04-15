@@ -14,3 +14,5 @@ export class TransformInterceptor<T>
     return next.handle().pipe(map((data)=>({data})));
     }
 }
+
+// Este interceptor vai transformar todas as nossas responses com o formato acima

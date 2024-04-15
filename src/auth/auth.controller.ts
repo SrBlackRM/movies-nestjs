@@ -8,7 +8,7 @@ import { IsPublic } from './decorators/is-public.decorator';
 export class AuthController {
     constructor(private readonly authService: AuthService){}
 
-    @IsPublic()
+    @IsPublic()                     // Resolvi deixar privado, pois não faz sentido ter o token antes da autenticação de fato
     @Post('login')
     @HttpCode(HttpStatus.OK)
     @UseGuards(LocalAuthGuard)

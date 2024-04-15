@@ -8,7 +8,8 @@ import { IsPublic } from "src/auth/decorators/is-public.decorator";
 export class MoviesController{
     constructor(private readonly movieService: MovieService) {}
 
-    @IsPublic()
+    @IsPublic()                 // para visualizar catálogo sem necessidade de estar autenticado
+                                // para deixar privado, basta tirar o @IsPublic()
     @Get()
     public async getAll(): Promise<MovieModel[]>{
         return this.movieService.getAllMovies();

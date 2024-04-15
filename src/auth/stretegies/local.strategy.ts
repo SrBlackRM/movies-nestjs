@@ -13,3 +13,5 @@ export class LocalStrategy extends PassportStrategy(Strategy){
         return this.authService.validateUser(email, password);
     }
 }
+
+// A estratégia acima vai validar as entradas de email e senha
