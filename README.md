@@ -144,4 +144,4 @@ O projeto conta com uma documentação interativa usando Swagger que você pode 
 ### Deploy
 
 O deploy da aplicação foi feito usando a plataforma Render, e está em pleno funcionamento no seguinte endereço:
-https://movies-nestjs-nodedeploy-api.onrender.com
+https://movies-nestjs.onrender.com
