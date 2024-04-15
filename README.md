@@ -2,7 +2,7 @@
 
 Esse repositório é uma resolução do desafio para vaga backend da MKS Desenvolvimento de Sistemas e Empreendimentos Ltda.
 
-### INFORMAÇÕES
+### Informações
 
 O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API CRUD de um catálogo de filme usando as seguintes ferramentas:
   *TypeScript,*
@@ -26,10 +26,10 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
 
   2. Execução desse repositório:
   
-  ** Clonar para uma pasta local
-  ** instalar as dependências usando npm install ou yarn install.
-  ** criar um arquivo .env
-  ** preencher com as seguintes variáveis de ambiente, exemplo:
+  - Clonar para uma pasta local
+  - instalar as dependências usando npm install ou yarn install.
+  - criar um arquivo .env
+  - preencher com as seguintes variáveis de ambiente, exemplo:
 
     ```bash
     POSTGRES_HOST=localhost
@@ -44,7 +44,7 @@ O desafio basicamente é desenvolver um sistema de autenticação JWT e uma API 
     JWT_SECRET=chave_secreta
     ```
 
-  ** Iniciar o projeto com o Docker com o seguinte comando:
+  - Iniciar o projeto com o Docker com o seguinte comando:
 
     ```bash
     docker-compose --env-file .env  up -d
