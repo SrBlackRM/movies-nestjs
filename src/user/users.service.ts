@@ -3,7 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { UserModel } from "./users.model";
 import { UsersValidation } from "./validation/users.validation";
-var md5 = require('md5');
+const bcrypt = require('bcrypt');
 
 @Injectable()
 export class UserService{
@@ -22,18 +22,21 @@ export class UserService{
             throw new ConflictException('Email já existe');
         }
 
-        // Escolhi trabalhar com Hash MD5
-        const passwordMD5 = md5(userData.password);
+        
+
+        // Seguindo concelho, resolvi trocar de md5 para bcrypt por ser mais seguro
+        const isPasswordValid = await bcrypt.hash(userData.password, 10)
 
         const user = new UserModel();
         user.email = userData.email;
         user.name = userData.name;
         user.username = userData.username;
-        user.password = passwordMD5;
+        user.password = isPasswordValid;
 
         // Salva no banco os dados passados pelo Request
         const savedUser = await this.usersRepository.save(user);
         
+
         // Remove a senha depois de salvar no banco para poder retornar sem ela no Response
         const {password, ...noPassUser} = savedUser
         

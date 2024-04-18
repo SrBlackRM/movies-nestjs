@@ -63,6 +63,8 @@ Porta padrão do projeto é 8080, mas pode ser alterado
 * Autenticação: autenticação de login em `POST /api/v1/auth/login`, validado o login é gerado um JWT que garante usuário autenticado para o resto da aplicação
 
 
+
+
 ### Documentação
 
 O projeto conta com uma documentação interativa usando Swagger que você pode acessar facilmente através da rota `/docs`. Lá, é possível ter uma visão completa de todos os endpoints disponíveis, permitindo explorar suas funcionalidades e até mesmo experimentá-los diretamente.

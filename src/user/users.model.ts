@@ -20,6 +20,6 @@ export class UserModel{
     email: string;
     
     @ApiProperty()
-    @Column({length: 40})
+    @Column({length: 72})
     password: string;
 }

@@ -4,7 +4,7 @@ import { UserService } from 'src/user/users.service';
 import { UserPayload } from './models/UserPayload';
 import { JwtService } from '@nestjs/jwt';
 import { UserToken } from './models/UserToken';
-var md5 = require('md5');
+const bcrypt = require('bcrypt');
 
 @Injectable()
 export class AuthService {
@@ -19,8 +19,8 @@ export class AuthService {
         const user = await this.userService.findUserByEmail(email);
 
         if (user) {
-            // Comparamos a senha convertida em MD5
-            const isPasswordValid = (md5(password) == user.password);
+            // Comparamos a senha convertida em Bcrypt
+            const isPasswordValid = await bcrypt.compare(password, user.password);
 
             // Se for válida, retorna o objeto Usuário, tirando a senha
             if (isPasswordValid){
