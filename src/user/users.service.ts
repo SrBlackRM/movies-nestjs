@@ -24,7 +24,7 @@ export class UserService{
 
         
 
-        // Seguindo concelho, resolvi trocar de md5 para bcrypt por ser mais seguro
+        // Seguindo conselho, resolvi trocar de md5 para bcrypt por ser mais seguro
         const isPasswordValid = await bcrypt.hash(userData.password, 10)
 
         const user = new UserModel();
