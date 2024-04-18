@@ -16,8 +16,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new TransformInterceptor);
 
   const config = new DocumentBuilder()
-    .setTitle('Movies')
-    .setDescription('Movies API description')
+    .setTitle('Documentação API MKS Movies')
+    .setDescription('')
     .setVersion('1.0')
     .addTag('movies')
     .build();
